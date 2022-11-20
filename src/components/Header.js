@@ -2,25 +2,21 @@ import React from 'react';
 import '../stylesheets/Header.css';
 import header from '../images/header.png';
 
-class Header extends React.Component {
-  
-  render() {
+const Header = ({headerExpanded, headerTitle}) => {
     return(
     <div className="head-container">
       <img 
         src={header} 
         alt='header' 
-        className={`head-image ${
-          this.props.headerExpanded
+        className={`head-image ${headerExpanded
             ? 'head-image-expanded'
             : 'head-image-contracted'}`}
       />
       <h1 className={`head-text ${
-          this.props.headerExpanded
+          headerExpanded
             ? 'head-text-expanded'
-            : 'head-text-contracted'}`}>{this.props.headerTitle}</h1>
+            : 'head-text-contracted'}`}>{headerTitle}</h1>
     </div>) 
-  }
 }
 
 
